@@ -1,13 +1,12 @@
-# Manual de Extensibilidad y Profundización: MiniTorch Lite
+# Manual de Extensibilidad y Profundización: TenMiNiTorch Lite
 
-**Autor:** Manus AI
-**Fecha:** 29 de Noviembre de 2025
 
-Este manual sirve como una guía avanzada y práctica para desarrolladores que deseen extender y profundizar en la funcionalidad de MiniTorch Lite. Se centra en la arquitectura modular de la librería, explicando cómo añadir nuevas funciones y capas, y analizando las posibilidades de despliegue avanzado.
+
+Este manual sirve como una guía avanzada y práctica para desarrolladores que deseen extender y profundizar en la funcionalidad de TenMiNiTorch Lite. Se centra en la arquitectura modular de la librería, explicando cómo añadir nuevas funciones y capas, y analizando las posibilidades de despliegue avanzado.
 
 ## 1. Guía de Extensibilidad: Funciones de Activación y Capas
 
-La arquitectura de MiniTorch Lite está diseñada para ser extensible. La clave para añadir nuevas funcionalidades reside en dos clases base: `minitorch_lite.autograd.Function` (para operaciones matemáticas) y `minitorch_lite.nn.Module` (para capas de red).
+La arquitectura de TenMiNiTorch Lite está diseñada para ser extensible. La clave para añadir nuevas funcionalidades reside en dos clases base: `minitorch_lite.autograd.Function` (para operaciones matemáticas) y `minitorch_lite.nn.Module` (para capas de red).
 
 ### 1.1. Implementación de Nuevas Funciones de Activación (Ejemplo: Swish)
 
