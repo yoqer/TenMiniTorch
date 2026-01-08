@@ -1,7 +1,7 @@
 # TenMiniTorch
 
 
-TenMiniTorch es una librería PyTorch, con facultad final de Tensorflow y comprensión de modelos Mini, para placas IoT. 
+TenMiniTorch es una librería PyTorch, con facultad final de Tensorflow y compresión de modelos Mini, para placas IoT. 
 
 Es una librería limpia y minima sin mayor funcionalidad que para Refourcing Learning,  Fine-Tuning; Entreno y Re-Entreno. 
 Por lo que puede requerir otras externas para ciertas acciones.
