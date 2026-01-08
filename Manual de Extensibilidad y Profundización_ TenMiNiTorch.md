@@ -79,7 +79,7 @@ Una capa convolucional 1D se utiliza para procesar secuencias de datos (ej. seri
 
 ## 2. Profundización de Funciones: Estado Actual y Próximos Pasos
 
-MiniTorch Lite es un prototipo funcional en sus componentes básicos, pero requiere trabajo para ser completamente funcional y optimizado.
+TenMiNiTorch Lite es un prototipo funcional en sus componentes básicos, pero requiere trabajo para ser completamente funcional y optimizado.
 
 ### 2.1. Funcionalidad Actual (Implementada)
 
@@ -100,7 +100,7 @@ El principal obstáculo para el entrenamiento de redes neuronales complejas es l
 | **Operaciones de *Broadcasting*** | **Importante.** Asegurar que los gradientes se reduzcan correctamente cuando las formas de los tensores no coinciden (ej. sumar un vector a una matriz). | Lógica de reducción de gradientes en el `backward` de `Add`, `Mul`, etc. |
 | **Módulo `lite`** | **Esencial** para el objetivo "Lite". | Implementar la clase `Quantizer` y el `LiteEngine` para la inferencia cuantizada. |
 
-## 3. Profundización de Librerías: El Ecosistema de MiniTorch Lite
+## 3. Profundización de Librerías: El Ecosistema de TenMiNiTorch Lite
 
 ### 3.1. NumPy: El Corazón Temporal
 
@@ -115,8 +115,8 @@ NumPy es el *backend* de cálculo. La clase `Tensor` delega todas las operacione
 Pandas no es una librería de *Deep Learning*, sino de manipulación de datos.
 
 *   **Función:** Carga, limpieza, transformación y análisis exploratorio de datos tabulares.
-*   **Uso:** Se utiliza **antes** de MiniTorch Lite. Los datos se cargan en un `DataFrame`, se normalizan, se manejan los valores perdidos, y finalmente se extraen las columnas relevantes.
-*   **Implementación:** El paso final es convertir el `DataFrame` o las Series a un *array* de NumPy (`df.values` o `df.to_numpy()`) y luego envolverlo en un `Tensor` de MiniTorch Lite.
+*   **Uso:** Se utiliza **antes** de TenMiNiTorch Lite. Los datos se cargan en un `DataFrame`, se normalizan, se manejan los valores perdidos, y finalmente se extraen las columnas relevantes.
+*   **Implementación:** El paso final es convertir el `DataFrame` o las Series a un *array* de NumPy (`df.values` o `df.to_numpy()`) y luego envolverlo en un `Tensor` de TenMiNiTorch Lite.
 
 ```python
 import pandas as pd
@@ -138,9 +138,9 @@ Para un dispositivo de borde, la conectividad puede ser intermitente. Se pueden 
 
 ### 4.1. Acceso a RAG (Retrieval-Augmented Generation) Antes de Inferir
 
-El RAG se utiliza para mejorar la respuesta de un modelo de lenguaje con información externa. En el contexto de MiniTorch Lite, esto se puede adaptar para **validación de datos o pre-inferencia inteligente**.
+El RAG se utiliza para mejorar la respuesta de un modelo de lenguaje con información externa. En el contexto de TenMiNiTorch Lite, esto se puede adaptar para **validación de datos o pre-inferencia inteligente**.
 
-| Concepto | Aplicación en MiniTorch Lite | Cómo Implementarlo |
+| Concepto | Aplicación en TenMiNiTorch Lite | Cómo Implementarlo |
 | :--- | :--- | :--- |
 | **RAG en Pre-Inferencia** | El dispositivo de borde (con el modelo cuantizado) se conecta a Internet para **validar** o **enriquecer** los datos de entrada antes de pasarlos al modelo local. | **1. Conexión:** El dispositivo usa una conexión Wi-Fi/Celular. **2. Consulta:** Envía una consulta ligera (ej. "Temperatura actual en la zona") a un servidor RAG. **3. Respuesta:** El servidor devuelve un dato validado o un *flag* de alerta. **4. Decisión:** El dispositivo decide si procede con la inferencia local o si la respuesta del RAG es suficiente. |
 | **Modelo de Respaldo (Fallback)** | Si el modelo local cuantizado detecta una entrada de baja calidad o fuera de su rango de confianza, el dispositivo consulta un modelo más grande y sin cuantizar alojado en un servidor. | **1. Detección de Confianza:** El modelo local calcula una métrica de confianza. **2. Consulta Remota:** Si la confianza es baja, el dispositivo envía los datos de entrada al servidor de *hosting*. **3. Inferencia Remota:** El servidor ejecuta el modelo `float32` (sin cuantizar) para obtener una predicción de alta precisión. **4. Respuesta:** El dispositivo utiliza la predicción remota. |
