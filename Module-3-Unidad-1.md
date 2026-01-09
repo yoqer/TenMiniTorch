@@ -6,7 +6,7 @@
 
 ## Eficiencia
 
-Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que: `Module-0` `.`
+Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que: `Module-0` 
 
 
 Este módulo se enfoca en aprovechar los tensores para escribir código rápido, primero en CPUs estándar y luego usando GPUs.
@@ -36,7 +36,7 @@ de Numba.
 
 Asegúrate de leer muy cuidadosamente la sección sobre paralelismo, [Numba](https://numba.pydata.org/numba-doc/latest/user/parallel.html).
 
-El backend principal para nuestra base de código son las tres funciones:   `map`   `zip` `reduce` `.`
+El backend principal para nuestra base de código son las tres funciones:   `map`   `zip` `reduce` 
 
 Si podemos acelerar estas tres, todo lo que hemos construido hasta ahora mejorará. Este ejercicio te pide que utilices Numba y la función `njit` 
 
