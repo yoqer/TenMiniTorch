@@ -12,7 +12,8 @@ Además, tendrás que instalar y descargar la biblioteca MNist.
 
 (En Mac, esto puede requerir instalar el comando)wget
 
-    pip install python-mnist mnist_get_data.sh
+    pip install python-mnist 
+    mnist_get_data.sh
     
 Pruebas:
 
