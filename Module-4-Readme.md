@@ -5,7 +5,8 @@
 
 [Resumen:](https://minitorch.github.io/module4.html) 
 
-Este módulo requiere , , , , , , , , , y del Módulo 3: fast_ops.py cuda_ops.pyscalar.py tensor_functions.py tensor_data.py tensor_ops.py operators.py module.pyautodiff.py
+Este módulo requiere , , , , , , , , , y del Módulo 3: `fast_ops.py` `cuda_ops.py` `scalar.py` `tensor_functions.py` `tensor_data.py` `tensor_ops.py` `operators.py` `module.py` `autodiff.py`
+
 
 Además, tendrás que instalar y descargar la biblioteca MNist.
 
