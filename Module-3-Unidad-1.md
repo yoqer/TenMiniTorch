@@ -156,6 +156,7 @@ Pasa las pruebas marcadas como `task3_2`
 
 
 - Incluye la salida de diagnósticos del script anterior en tu README.
+  
 - Asegúrate de que el código implemente las optimizaciones especificadas en los docstrings. Verificaremos esto explícitamente.
 
 `minitorch.fast_ops._tensor_matrix_multiply(out: Storage, out_shape: Shape, out_strides: Strides, a_storage: Storage, a_shape: Shape, a_strides: Strides, b_storage: Storage, b_shape: Shape, b_strides: Strides) -> None`
