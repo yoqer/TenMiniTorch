@@ -61,20 +61,26 @@ Ejecutar este script ejecutará diagnósticos de NUMBA en tus funciones.
 
 Por hacer
 
-Completa lo siguiente en `minitorch/fast_ops.py` y pasa las pruebas marcadas como `task3_1`.
+Completa lo siguiente en `minitorch/fast_ops.py` 
+
+y pasa las pruebas marcadas como `task3_1`
 
 - Incluye la salida de diagnósticos del script anterior en tu README.
 - Asegúrate de que el código implemente las optimizaciones especificadas en los docstrings. Verificaremos esto explícitamente.
 
 `minitorch.fast_ops.tensor_map(fn: Callable[[float], float]) -> Callable[[Storage, Shape, Strides, Storage, Shape, Strides], None]`
 
-Función tensor_map de bajo nivel de NUMBA. Ver `tensor_ops.py` para la descripción.
+Función tensor_map de bajo nivel de NUMBA. Ver `tensor_ops.py` para la descripción: 
 
 Optimizaciones:
 
 - Bucle principal en paralelo
 - Todos los índices usan buffers de numpy
-- Cuando `out` e `in` están alineados en stride, evita la indexación
+- Cuando `out`
+
+  e `in`
+
+  están alineados en stride, evita la indexación
 
 ---
 
@@ -86,13 +92,15 @@ fn: función de mapeo float-a-float para aplicar.
 
 `minitorch.fast_ops.tensor_zip(fn: Callable[[float, float], float]) -> Callable[[Storage, Shape, Strides, Storage, Shape, Strides, Storage, Shape, Strides], None]`
 
-Función tensor zip de orden superior de NUMBA. Ver `tensor_ops.py` para la descripción.
+Función tensor zip de orden superior de NUMBA. Ver `tensor_ops.py` para la descripción:
 
 Optimizaciones:
 
 - Bucle principal en paralelo
 - Todos los índices usan buffers de numpy
-- Cuando `out`, `a`, `b` están alineados en stride, evita la indexación
+- Cuando `out` `a` `b`
+
+  están alineados en stride, evita la indexación
 
 ---
 
@@ -104,7 +112,7 @@ fn: función que mapea dos floats a float para aplicar.
 
 `minitorch.fast_ops.tensor_reduce(fn: Callable[[float, float], float]) -> Callable[[Storage, Shape, Strides, Storage, Shape, Strides, int], None]`
 
-Función tensor reduce de orden superior de NUMBA. Ver `tensor_ops.py` para la descripción.
+Función tensor reduce de orden superior de NUMBA. Ver `tensor_ops.py` para la descripción:
 
 Optimizaciones:
 
@@ -124,7 +132,17 @@ Tarea 3.2: Multiplicación de Matrices
 
 La multiplicación de matrices es clave para todos los modelos que hemos entrenado hasta ahora. En el último módulo, calculamos la multiplicación de matrices usando broadcasting. En esta tarea, te pedimos que la implementes directamente como una función. Haz tu mejor esfuerzo para hacer la función eficiente, pero por ahora lo único que importa es que produces correctamente una función multiply que pase nuestras pruebas y tenga algún paralelismo.
 
-Para usar esta función, también necesitarás agregar una nueva función `MatMul` a `tensor_functions.py`. Hemos agregado una versión en el código inicial que puedes copiar. También podría ser útil agregar una `matrix_multiply` lenta con broadcasting a `tensor_ops.py` para depuración.
+Para usar esta función, también necesitarás agregar una nueva función `MatMul` 
+
+a `tensor_functions.py`
+
+Hemos agregado una versión en el código inicial que puedes copiar. 
+
+También podría ser útil agregar una `matrix_multiply`
+
+lenta con broadcasting a `tensor_ops.py` 
+
+para depuración.
 
 Para ayudarte a depurar este código, puedes usar el script de análisis paralelo.
 
@@ -132,7 +150,10 @@ Después de terminar esta tarea, puedes saltar a la 3.5 y experimentar con el en
 
 Por hacer
 
-Completa la siguiente función en `minitorch/fast_ops.py`. Pasa las pruebas marcadas como `task3_2`.
+Completa la siguiente función en `minitorch/fast_ops.py`
+
+Pasa las pruebas marcadas como `task3_2`
+
 
 - Incluye la salida de diagnósticos del script anterior en tu README.
 - Asegúrate de que el código implemente las optimizaciones especificadas en los docstrings. Verificaremos esto explícitamente.
@@ -177,7 +198,11 @@ Reduce es una función particularmente desafiante. Proporcionamos guías y una f
 
 Por hacer
 
-Completa las siguientes funciones en `minitorch/cuda_ops.py`, y pasa las pruebas marcadas como `task3_3`.
+Completa las siguientes funciones en `minitorch/cuda_ops.py`
+
+y pasa las pruebas marcadas como `task3_3`
+
+
 
 `minitorch.cuda_ops.tensor_map(fn: Callable[[float], float]) -> Callable[[Storage, Shape, Strides, Storage, Shape, Strides], None]`
 
@@ -252,7 +277,9 @@ fn: función de reducción que mapea dos floats a float.
 
 Tarea 3.4: Multiplicación de Matrices CUDA
 
-Finalmente podemos combinar ambos enfoques e implementar `matmul` en CUDA. Esta operación es probablemente la más importante en todo el aprendizaje profundo y es central para hacer que los modelos sean rápidos. Nuevamente, primero nos esforzamos por la precisión, pero cuanto más rápido puedas hacerla, mejor.
+Finalmente podemos combinar ambos enfoques e implementar `matmul`
+
+en CUDA. Esta operación es probablemente la más importante en todo el aprendizaje profundo y es central para hacer que los modelos sean rápidos. Nuevamente, primero nos esforzamos por la precisión, pero cuanto más rápido puedas hacerla, mejor.
 
 Implementar multiplicación de matrices y reducción eficientemente es enormemente importante para muchas tareas de aprendizaje profundo. Sigue las guías proporcionadas en clase para implementar estas funciones.
 
@@ -260,13 +287,23 @@ Debes documentar tu código para mostrarnos que entiendes cada línea. Muéstran
 
 Por hacer
 
-Implementa `minitorch/cuda_ops.py` con CUDA, y pasa las pruebas marcadas como `task3_4`. Sigue los requisitos especificados en la documentación.
+Implementa `minitorch/cuda_ops.py` 
+
+con CUDA, y pasa las pruebas marcadas como `task3_4`
+
+Sigue los requisitos especificados en la documentación.
 
 `minitorch.cuda_ops._mm_practice(out: Storage, a: Storage, b: Storage, size: int) -> None`
 
 Este es un kernel MM cuadrado de práctica para prepararte para matmul.
 
-Dado un almacenamiento `out` y dos almacenamientos `a` y `b`. Donde sabemos
+Dado un almacenamiento `out`
+
+y dos almacenamientos `a`
+
+y `b`
+
+Donde sabemos
 que ambos tienen forma \\[size, size\\] con strides \\[size, 1\\].
 
 Size es siempre < 32.
@@ -274,7 +311,12 @@ Size es siempre < 32.
 Requisitos:
 
 - Todos los datos deben moverse primero a memoria compartida.
-- Solo lee cada celda en `a` y `b` una vez.
+- Solo lee cada celda en `a`
+
+   y `b`
+
+   una vez.
+  
 - Solo escribe a memoria global una vez por kernel.
 
 Compute
@@ -304,7 +346,11 @@ Función de multiplicación de matrices tensor de CUDA.
 Requisitos:
 
 - Todos los datos deben moverse primero a memoria compartida.
-- Solo lee cada celda en `a` y `b` una vez.
+- Solo lee cada celda en `a`
+
+y `b`
+
+  una vez.
 - Solo escribe a memoria global una vez por kernel.
 
 Debe funcionar para cualquier forma de tensor que haga broadcast siempre que ::
@@ -318,7 +364,13 @@ None: Llena `out`
 
 Tarea 3.5: Entrenamiento
 
-Si tu código funciona, ahora deberías poder pasar al script de entrenamiento tensor en `project/run_fast_tensor.py`. Este código es la misma configuración básica de entrenamiento que `module2`, pero ahora utiliza tu código tensor rápido. Hemos dejado la capa `matmul` en blanco para que la implementes con tu código tensor.
+Si tu código funciona, ahora deberías poder pasar al script de entrenamiento tensor en `project/run_fast_tensor.py`
+
+Este código es la misma configuración básica de entrenamiento que `module2`
+
+pero ahora utiliza tu código tensor rápido. Hemos dejado la capa `matmul`
+
+en blanco para que la implementes con tu código tensor.
 
 Aquí está el comando ::
 
@@ -329,7 +381,11 @@ python run_fast_tensor.py --BACKEND cpu --HIDDEN 100 --DATASET split --RATE 0.05
 
 Por hacer
 
-- Implementa las funciones faltantes en `project/run_fast_tensor.py`. Estas deben hacer exactamente lo mismo que las funciones correspondientes en `project/run_tensor.py`, pero ahora usar el backend más rápido
+- Implementa las funciones faltantes en `project/run_fast_tensor.py`
+
+   Estas deben hacer exactamente lo mismo que las funciones correspondientes en `project/run_tensor.py`
+
+   pero ahora usar el backend más rápido
 
 - Entrena un modelo tensor y agrega tus resultados para todos los conjuntos de datos al README.
 
@@ -338,7 +394,7 @@ Por hacer
 Entrena un modelo tensor y agrega tus resultados para los tres conjuntos de datos al README. También registra el tiempo por época reportado por el entrenador. (Como referencia, nuestra implementación paralela dio una aceleración de 10x).
 En una configuración estándar de GPU de Colab, apunta a que tu CPU esté por debajo de 2 segundos por época y tu GPU por debajo de 1 segundo por época. (Con algo de ingenio puedes hacerlo mucho mejor.)
 
-```
+
 
 
 
