@@ -62,6 +62,10 @@ kernel: height x width del pooling
 ____________________________________________________________________________________________________________________________________________________________________________________________________________
 
 
+![tema4-1](https://github.com/user-attachments/assets/7901524c-0f1f-4f95-92da-d327536ee0cc)
+
+
+
 
 
 
@@ -72,6 +76,86 @@ Python
 Tensor de tamaño batch x channel x new_height x new_width x (kernel_height * kernel_width) así como los valores new_height y new_width.
 
 ```
+
+____________________________________________________________________
+
+Hazlo tu mismo:
+## Código de Ejemplo: Implementación de: avgpool2d
+
+
+PHYTON
+```phyton
+
+import minitorch as mt
+from typing import Tuple
+
+def avgpool2d(input: mt.Tensor, kernel: Tuple[int, int]) -> mt.Tensor:
+    """
+    Realiza pooling promedio 2D en el tensor de entrada.
+    
+    Args:
+        input: Tensor de forma (batch, channel, height, width)
+        kernel: Tupla (kernel_height, kernel_width)
+    
+    Returns:
+        Tensor de forma (batch, channel, new_height, new_width)
+    """
+    # Primero, reformateamos el tensor usando tile
+    tiled, new_height, new_width = mt.tile(input, kernel)
+    
+    # kernel_height * kernel_width es el número de elementos en cada ventana
+    kernel_size = kernel[0] * kernel[1]
+    
+    # Promediamos sobre la última dimensión (la dimensión de los valores del kernel)
+    # tiled.shape = (batch, channel, new_height, new_width, kernel_height * kernel_width)
+    # Después de mean(dim=4): (batch, channel, new_height, new_width)
+    pooled = tiled.mean(dim=4)
+    
+    return pooled
+
+# Ejemplo de uso:
+def ejemplo_avgpool2d():
+    # Crear un tensor de ejemplo: 1 imagen, 3 canales, 6x6
+    data = mt.rand((1, 3, 6, 6))
+    
+    # Kernel 2x2 para pooling
+    kernel = (2, 2)
+    
+    # Aplicar pooling
+    resultado = avgpool2d(data, kernel)
+    
+    # Forma del resultado: (1, 3, 3, 3) porque 6/2=3
+    print(f"Forma original: {data.shape}")
+    print(f"Forma después de pooling: {resultado.shape}")
+    
+    return resultado
+
+
+
+```
+
+
+
+Explicación del Código:
+ 
+La función  avgpool2d  toma un tensor de imágenes y un tamaño de kernel, y devuelve una versión reducida donde cada región del kernel se promedia.
+
+
+Funciona exactamente:
+
+1. 
+Paso 1 - Tile: La función  tile  reorganiza el tensor original en ventanas deslizantes. Si tienes una imagen 6x6 y kernel 2x2,  tile  creará un nuevo tensor donde cada elemento 2x2 se aplana en un vector de 4 elementos.
+ 
+Entrada:  (batch, channel, 6, 6) 
+ 
+Después de tile:  (batch, channel, 3, 3, 4)  donde la última dimensión contiene los 4 valores de cada ventana 2x2
+
+2. 
+Paso 2 - Promediar:  tiled.mean(dim=4)  calcula el promedio sobre la última dimensión, reduciendo cada ventana a su valor promedio.
+ 
+Resultado:  (batch, channel, 3, 3) 
+Función principal: El pooling reduce la dimensionalidad espacial mientras retiene la información promedio de cada región, lo que hace la red más robusta a pequeñas variaciones espaciales y
+## reduce el número de parámetros.
 
 
 
