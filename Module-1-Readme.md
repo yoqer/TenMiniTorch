@@ -7,7 +7,7 @@
 Esta tarea requiere los siguientes archivos de las asignaciones anteriores. Puedes conseguirlas corriendo:
 
  
- python sync_previous_module.py previous-module-dir current-module-dir
+ 'python sync_previous_module.py previous-module-dir current-module-dir.py'
 
 
 
