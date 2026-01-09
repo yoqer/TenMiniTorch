@@ -54,3 +54,19 @@ Reforma un tensor de imagen para pooling 2D
 ```python
 input: batch x channel x height x width
 kernel: height x width del pooling
+
+```
+
+
+__________________________________________________________________________________________________________________________________________
+
+
+
+
+```python
+
+Tensor de tamaño batch x channel x new_height x new_width x (kernel_height * kernel_width) así como los valores new_height y new_width.
+
+```
+
+
