@@ -78,7 +78,7 @@ Optimizaciones:
 - Todos los índices usan buffers de numpy
 - Cuando `out`
 
-  e
+  como 
   `in`
 
   están alineados en stride, evita la indexación
