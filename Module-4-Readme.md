@@ -4,6 +4,9 @@
 [Documentacion:](https://minitorch.github.io/) 
 
 [Resumen:](https://minitorch.github.io/module4.html) 
+Vease: [Redes Neuronales](https://github.com/yoqer/TenMiniTorch/blob/aprender/Module-4-Unidad-1.md) 
+
+
 
 Este módulo requiere , , , , , , , , , y del Módulo 3: `fast_ops.py` `cuda_ops.py` `scalar.py` `tensor_functions.py` `tensor_data.py` `tensor_ops.py` `operators.py` `module.py` `autodiff.py`
 
