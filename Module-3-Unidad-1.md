@@ -30,14 +30,13 @@ Esta asignación no requiere que modifiques el objeto tensor principal. En su lu
 
 **Nota**
 
-Esta tarea requiere familiaridad básica con: 
-`prange` 
+Esta tarea requiere familiaridad básica con:  `prange` 
 
 de Numba.
 
 Asegúrate de leer muy cuidadosamente la sección sobre paralelismo, [Numba](https://numba.pydata.org/numba-doc/latest/user/parallel.html).
 
-El backend principal para nuestra base de código son las tres funciones: `map``,` `zip`' `y` `reduce` `.`
+El backend principal para nuestra base de código son las tres funciones:   `map` ,   `zip` `y` `reduce` `.`
 
 Si podemos acelerar estas tres, todo lo que hemos construido hasta ahora mejorará. Este ejercicio te pide que utilices Numba y la función `njit` 
 
