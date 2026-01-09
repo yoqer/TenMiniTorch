@@ -1,6 +1,6 @@
-[Docs:](https://minitorch.github.io/) 
+[Documentacion:](https://minitorch.github.io/) 
 
-[Overview:](https://minitorch.github.io/module2/module2/) 
+[Resumen:](https://minitorch.github.io/module2/module2/) 
 
 
 
