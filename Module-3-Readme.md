@@ -1,7 +1,7 @@
 [Documentacion:](https://minitorch.github.io/) 
 
 [Resumen:](https://minitorch.github.io/module3.html) 
--Vease: [Eficiente](https://github.com/yoqer/Module-3-Unidad-1.md) 
+-Vease: [Eficiente](https://github.com/yoqer/TenMiniTorch/blob/aprender/Module-3-Unidad-1.md) 
 
 Tendrás que modificar ligeramente en esta tarea: tensor_functions.py
 
