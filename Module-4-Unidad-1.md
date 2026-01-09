@@ -79,7 +79,9 @@ Tensor de tamaño batch x channel x new_height x new_width x (kernel_height * ke
 
 ____________________________________________________________________
 
-Hazlo tu mismo:
+
+Para Hacerlo tu mismo:
+
 ## Código de Ejemplo: Implementación de: avgpool2d
 
 
@@ -141,21 +143,21 @@ Explicación del Código:
 La función  avgpool2d  toma un tensor de imágenes y un tamaño de kernel, y devuelve una versión reducida donde cada región del kernel se promedia.
 
 
-Funciona exactamente:
+Exactamente funciona:
 
-1. 
+1°. 
 Paso 1 - Tile: La función  tile  reorganiza el tensor original en ventanas deslizantes. Si tienes una imagen 6x6 y kernel 2x2,  tile  creará un nuevo tensor donde cada elemento 2x2 se aplana en un vector de 4 elementos.
  
 Entrada:  (batch, channel, 6, 6) 
  
 Después de tile:  (batch, channel, 3, 3, 4)  donde la última dimensión contiene los 4 valores de cada ventana 2x2
 
-2. 
+2°. 
 Paso 2 - Promediar:  tiled.mean(dim=4)  calcula el promedio sobre la última dimensión, reduciendo cada ventana a su valor promedio.
  
 Resultado:  (batch, channel, 3, 3) 
-Función principal: El pooling reduce la dimensionalidad espacial mientras retiene la información promedio de cada región, lo que hace la red más robusta a pequeñas variaciones espaciales y
-## reduce el número de parámetros.
+Función principal: El pooling reduce la dimensionalidad espacial mientras retiene la información promedio de cada región, lo que hace la red más robusta a pequeñas variaciones espaciales y 
+reduce el número de parámetros.
 
 
 
