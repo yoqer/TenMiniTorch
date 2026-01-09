@@ -31,11 +31,18 @@ Esta asignación no requiere que modifiques el objeto tensor principal. En su lu
 
 Esta tarea requiere familiaridad básica con: 
 `prange` 
+
 de Numba.
 
 Asegúrate de leer muy cuidadosamente la sección sobre paralelismo, [Numba](https://numba.pydata.org/numba-doc/latest/user/parallel.html).
 
-El backend principal para nuestra base de código son las tres funciones `map`, `zip` y `reduce`. Si podemos acelerar estas tres, todo lo que hemos construido hasta ahora mejorará. Este ejercicio te pide que utilices Numba y la función `njit` para acelerar estas funciones. En particular, si puedes utilizar la paralelización a través de `prange` puedes obtener grandes mejoras. ¡Pero ten cuidado! La paralelización puede llevar a errores extraños.
+El backend principal para nuestra base de código son las tres funciones `map`, `zip` y `reduce`. 
+
+Si podemos acelerar estas tres, todo lo que hemos construido hasta ahora mejorará. Este ejercicio te pide que utilices Numba y la función `njit` 
+
+para acelerar estas funciones. En particular, si puedes utilizar la paralelización a través de `prange` 
+
+puedes obtener grandes mejoras. ¡Pero ten cuidado! La paralelización puede llevar a errores extraños.
 
 Para ayudarte a depurar este código, hemos creado un script de análisis paralelo para ti:
 
