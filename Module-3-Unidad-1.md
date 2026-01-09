@@ -6,7 +6,7 @@
 
 ## Eficiencia
 
-Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que: `Module-0` 
+Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que: `module0` 
 
 
 Este módulo se enfoca en aprovechar los tensores para escribir código rápido, primero en CPUs estándar y luego usando GPUs.
@@ -311,6 +311,7 @@ Size es siempre < 32.
 Requisitos:
 
 - Todos los datos deben moverse primero a memoria compartida.
+  
 - Solo lee cada celda en `a`
 
    y `b`
@@ -346,11 +347,13 @@ Función de multiplicación de matrices tensor de CUDA.
 Requisitos:
 
 - Todos los datos deben moverse primero a memoria compartida.
+  
 - Solo lee cada celda en `a`
 
 y `b`
 
   una vez.
+  
 - Solo escribe a memoria global una vez por kernel.
 
 Debe funcionar para cualquier forma de tensor que haga broadcast siempre que ::
