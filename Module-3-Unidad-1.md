@@ -140,7 +140,7 @@ Hemos agregado una versión en el código inicial que puedes copiar.
 
 También podría ser útil agregar una `matrix_multiply`
 
-lenta 
+  lenta 
 
 con broadcasting a `tensor_ops.py` 
 
