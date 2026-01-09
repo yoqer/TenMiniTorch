@@ -70,3 +70,43 @@ Tensor de tamaño batch x channel x new_height x new_width x (kernel_height * ke
 ```
 
 
+
+
+
+![tema4-2](https://github.com/user-attachments/assets/4e092352-2dea-44d2-9a1b-8738813a4465)
+
+
+
+
+## Tarea 4.4: Softmax y Dropout
+
+Implementarás max, softmax y log softmax en tensores, así como las operaciones de dropout y max-pooling.
+
+### Por hacer
+
+- Completa las siguientes funciones en `minitorch/nn.py`, y pasa las pruebas marcadas como `task4_4`.
+
+- Agrega pruebas de propiedad para la función en `test/test_nn.py` y asegúrate de entender su computación de gradiente.
+
+- `minitorch.max`
+- `minitorch.softmax`
+- `minitorch.logsoftmax`
+- `minitorch.maxpool2d`
+- `minitorch.dropout`
+
+Implementar convolución y pooling eficientemente es crítico para el reconocimiento de imágenes a gran escala. Sin embargo, ambos son un poco más difíciles que algunas de las funciones CUDA básicas que hemos escrito hasta ahora. Para esta tarea, agrega un archivo extra `cuda_conv.py` que implemente `conv1d` y `conv2d` en CUDA. Muestra la salida en colab.
+
+## Tarea 4.5: Entrenando un Clasificador de Imágenes
+
+Si tu código funciona, ahora deberías poder pasar a los scripts de entrenamiento de NLP y CV en `project/run_sentiment.py` y `project/run_mnist_multiclass.py`. Este script tiene la misma configuración básica de entrenamiento que el `módulo3`, pero ahora adaptado a clasificación de sentimientos e imágenes. Necesitas implementar `Conv1D`, `Conv2D` y `Network` para ambos archivos.
+
+Recomendamos ejecutar en la línea de comandos cuando pruebes. Pero también puedes usar la visualización de Streamlit para ver los estados ocultos de tu modelo, como lo siguiente:
+
+### Por hacer
+
+- Entrena un modelo en Sentiment (SST2), y agrega los registros de impresión de entrenamiento como un archivo de texto `sentiment.txt` al repositorio. Debe mostrar pérdida de entrenamiento, precisión de entrenamiento y precisión de validación. (El modelo debe obtener >70% de precisión de validación óptima.)
+
+- Entrena un modelo en Clasificación de Dígitos (MNIST) y agrega los registros como un archivo de texto `mnist.txt` al repositorio. Debe mostrar pérdida de entrenamiento y precisión de validación de 16 clases.
+
+
+
