@@ -6,7 +6,8 @@
 
 ## Eficiencia
 
-Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que `module0`. Este módulo se enfoca en aprovechar los tensores para escribir código rápido, primero en CPUs estándar y luego usando GPUs.
+Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que: `module0`. 
+Este módulo se enfoca en aprovechar los tensores para escribir código rápido, primero en CPUs estándar y luego usando GPUs.
 
 Necesitas los archivos de asignaciones anteriores, así que asegúrate de traerlos a tu nuevo repositorio.
 
@@ -27,7 +28,8 @@ Esta asignación no requiere que modifiques el objeto tensor principal. En su lu
 
 **Nota**
 
-Esta tarea requiere familiaridad básica con `prange` de Numba.
+Esta tarea requiere familiaridad básica con: `prange` 
+de Numba.
 
 Asegúrate de leer muy cuidadosamente la sección sobre paralelismo, [Numba](https://numba.pydata.org/numba-doc/latest/user/parallel.html).
 
