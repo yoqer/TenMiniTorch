@@ -1,5 +1,9 @@
 # Asignación - MiniTorch
 
+![kimi-17679474646094266329487416457710](https://github.com/user-attachments/assets/ba94a295-7a48-448a-b911-0af897f1be2d)
+
+
+
 ## Eficiencia
 
 Además de ayudar a simplificar el código, los tensores proporcionan una base para acelerar la computación. De hecho, son realmente la única forma de escribir código de aprendizaje profundo de manera eficiente en un lenguaje lento como Python. Sin embargo, nada de lo que hemos hecho hasta ahora realmente hace que algo sea más rápido que `module0`. Este módulo se enfoca en aprovechar los tensores para escribir código rápido, primero en CPUs estándar y luego usando GPUs.
@@ -36,7 +40,6 @@ python project/parallel_check.py
 
 
 
-![kimi-17679474646094266329487416457710](https://github.com/user-attachments/assets/ba94a295-7a48-448a-b911-0af897f1be2d)
 
 
 ________________________________________________________________________________________________________________________________________
