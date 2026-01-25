@@ -11,7 +11,7 @@ La librería se divide en cuatro módulos principales que replican la estructura
 
 ### 1.1. Módulo `tensor`: El Núcleo de Datos
 
-El `Tensor` es la unidad fundamental de datos en MiniTorch Lite. Representa un *array* multidimensional y almacena los metadatos necesarios para el cálculo de gradientes.
+El `Tensor` es la unidad fundamental de datos en TenMiniTorch Lite. Representa un *array* multidimensional y almacena los metadatos necesarios para el cálculo de gradientes.
 
 | Clase/Función | Descripción | Proceso Interno | Extensibilidad (Cómo Cambiar) |
 | :--- | :--- | :--- | :--- |
@@ -52,22 +52,22 @@ Gestiona la actualización de los pesos del modelo.
 
 ### 2.1. Uso de NumPy
 
-MiniTorch Lite utiliza **NumPy** como su *backend* de cálculo principal.
+TenMiniTorch Lite utiliza **NumPy** como su *backend* de cálculo principal.
 
 *   **Ventajas:** NumPy proporciona una base de *arrays* eficiente y optimizada para operaciones numéricas, lo que permite un desarrollo rápido del prototipo. La clase `Tensor` simplemente envuelve un `numpy.ndarray` en su atributo `self.data`.
-*   **Limitación y Futuro:** Para la versión "Lite" final, el uso de NumPy es una limitación, ya que es una librería grande. La visión de MiniTorch Lite es reemplazar el *backend* de NumPy con un **núcleo de tensores escrito en C/C++** (o un lenguaje de bajo nivel como Rust) para eliminar la dependencia de NumPy y reducir drásticamente el tamaño del paquete y el consumo de memoria en tiempo de ejecución.
+*   **Limitación y Futuro:** Para la versión "Lite" final, el uso de NumPy es una limitación, ya que es una librería grande. La visión de TenMiniTorch Lite es reemplazar el *backend* de NumPy con un **núcleo de tensores escrito en C/C++** (o un lenguaje de bajo nivel como Rust) para eliminar la dependencia de NumPy y reducir drásticamente el tamaño del paquete y el consumo de memoria en tiempo de ejecución.
 
 ### 2.2. Integración con Pandas y Otras Librerías
 
 | Librería | Propósito | Cómo Integrar |
 | :--- | :--- | :--- |
-| **Pandas** | Manipulación y preprocesamiento de datos tabulares. | **Uso en Preprocesamiento:** Pandas se usaría *antes* de pasar los datos a MiniTorch Lite. Los *DataFrames* se cargarían, limpiarían y transformarían, y finalmente se convertirían a *arrays* de NumPy antes de ser envueltos en objetos `Tensor`. |
+| **Pandas** | Manipulación y preprocesamiento de datos tabulares. | **Uso en Preprocesamiento:** Pandas se usaría *antes* de pasar los datos a TenMiniTorch Lite. Los *DataFrames* se cargarían, limpiarían y transformarían, y finalmente se convertirían a *arrays* de NumPy antes de ser envueltos en objetos `Tensor`. |
 | **Scikit-learn** | Métricas, *split* de datos, preprocesamiento avanzado. | **Uso en Flujo de Trabajo:** Se pueden usar sus funciones para dividir datos (`train_test_split`) o calcular métricas de rendimiento que no estén en `nn.py`. |
 | **Matplotlib/Seaborn** | Visualización de datos y resultados. | **Uso en Análisis:** Se usarían para graficar la pérdida durante el entrenamiento o visualizar las predicciones del modelo. |
 
 ## 3. Proceso de Cuantización y Requisitos de Dispositivo
 
-El proceso de cuantización es el paso clave para lograr la ligereza de MiniTorch Lite, similar a TensorFlow Lite. Aunque no está implementado en el prototipo actual, el diseño modular lo prevé en el módulo `minitorch.lite`.
+El proceso de cuantización es el paso clave para lograr la ligereza de TenMiniTorch Lite, similar a TensorFlow Lite. Aunque no está implementado en el prototipo actual, el diseño modular lo prevé en el módulo `minitorch.lite`.
 
 ### 3.1. Flujo de Trabajo Completo (Entrenamiento a Despliegue)
 
@@ -108,7 +108,7 @@ La cuantización reduce el tamaño del modelo en aproximadamente **4 veces** (de
 
 ## 4. Extensibilidad: Cómo Modificar y Añadir Funcionalidad
 
-La clave de MiniTorch Lite es su diseño modular, que permite a los usuarios extender la librería sin modificar el núcleo.
+La clave de TenMiniTorch Lite es su diseño modular, que permite a los usuarios extender la librería sin modificar el núcleo.
 
 ### 4.1. Añadir una Nueva Operación (Ej. ReLU)
 
@@ -176,7 +176,7 @@ class Dropout(Module):
         return tensor(x.data * mask, requires_grad=x.requires_grad)
 ```
 
-Este manual proporciona una guía completa sobre la arquitectura, el funcionamiento interno y las posibilidades de extensión de MiniTorch Lite, cumpliendo con todos los requisitos de detalle solicitados.
+Este manual proporciona una guía completa sobre la arquitectura, el funcionamiento interno y las posibilidades de extensión de TenMiniTorch Lite, cumpliendo con todos los requisitos de detalle solicitados.
 
 ***
 
