@@ -1,4 +1,4 @@
-# Manual Técnico y de Usuario: MiniTorch Lite
+# Manual Técnico y de Usuario: TenMiniTorch Lite
 
 **Autor:** Manus AI
 **Fecha:** 29 de Noviembre de 2025
