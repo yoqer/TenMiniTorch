@@ -3,7 +3,7 @@
 **Autor:** Manus AI
 **Fecha:** 29 de Noviembre de 2025
 
-MiniTorch Lite es una librería de aprendizaje automático diseñada para ofrecer la flexibilidad de PyTorch en un paquete ligero, optimizado para entornos con recursos limitados, como dispositivos de borde (Edge AI) y microcontroladores. Su arquitectura modular y extensible permite a los desarrolladores construir, entrenar y optimizar modelos con un *footprint* de memoria y almacenamiento mínimo.
+TenMiniTorch Lite es una librería de aprendizaje automático diseñada para ofrecer la flexibilidad de PyTorch en un paquete ligero, optimizado para entornos con recursos limitados, como dispositivos de borde (Edge AI) y microcontroladores. Su arquitectura modular y extensible permite a los desarrolladores construir, entrenar y optimizar modelos con un *footprint* de memoria y almacenamiento mínimo.
 
 ## 1. Componentes Centrales y Funcionamiento
 
