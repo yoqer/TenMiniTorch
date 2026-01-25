@@ -176,7 +176,7 @@ class Dropout(Module):
         return tensor(x.data * mask, requires_grad=x.requires_grad)
 ```
 
-Este manual proporciona una guía completa sobre la arquitectura, el funcionamiento interno y las posibilidades de extensión de TenMiniTorch Lite, cumpliendo con su portabilidad.
+Este manual proporciona una guía completa sobre la arquitectura, el funcionamiento interno y las posibilidades de extensión de TenMiniTorch Lite, cumpliendo portabilidad.
 
 ***
 
